@@ -26,3 +26,6 @@ Thumbs.db
 
 # Optional Drizzle or DB generated files
 drizzle/
+
+# clerk configuration (can include secrets)
+/.clerk/
