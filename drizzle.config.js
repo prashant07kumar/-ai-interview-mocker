@@ -12,15 +12,32 @@
 
 
 
-import dotenv from "dotenv";
-dotenv.config({ path: ".env.local" }); // ✅ Load .env.local variables
+// import dotenv from "dotenv";
+// dotenv.config({ path: ".env.local" }); // ✅ Load .env.local variables
 
-/** @type { import("drizzle-kit").Config } */
-export default {
+// /** @type { import("drizzle-kit").Config } */
+// export default {
+//   schema: "./utils/schema.js",
+//   dialect: "postgresql",
+//   dbCredentials: {
+//     connectionString: process.env.DATABASE_URL, // ✅ Use from .env.local
+//   },
+// };
+
+
+
+
+import { defineConfig } from "drizzle-kit";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env.local" });
+
+export default defineConfig({
   schema: "./utils/schema.js",
+  out: "./drizzle",
   dialect: "postgresql",
   dbCredentials: {
-    connectionString: process.env.DATABASE_URL, // ✅ Use from .env.local
+    url: process.env.NEXT_PUBLIC_DRIZZLE_DB_URL,
   },
-};
+});
 
