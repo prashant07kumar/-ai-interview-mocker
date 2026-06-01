@@ -31,7 +31,7 @@ export default function AboutPage() {
         <div className="p-6 bg-green-100 rounded-xl shadow hover:shadow-md transition">
           <h3 className="text-xl font-semibold text-gray-800 mb-2">Track Your Progress</h3>
           <p className="text-gray-600">
-            Keep a history of sessions, scores, and feedback to measure improvement over time.
+            Keep a history of sessions, scores, and feedbacks to measure improvement over time.
           </p>
         </div>
       </div>

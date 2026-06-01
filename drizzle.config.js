@@ -1,10 +1,26 @@
-/**@type { import("drizzle-kit").Config} */
+// /**@type { import("drizzle-kit").Config} */
+// export default {
+//   schema: "./utils/schema.js",
+//   dialect: 'postgresql',
+//   dbCredentials: {
+//     url: "postgresql://neondb_owner:npg_mncN7Cu4ZYFR@ep-wispy-dream-a8vgu4s0-pooler.eastus2.azure.neon.tech/ai-interviewer-mocker?sslmode=require",
+    
+//   },
+  
+// };
+
+
+
+
+import dotenv from "dotenv";
+dotenv.config({ path: ".env.local" }); // ✅ Load .env.local variables
+
+/** @type { import("drizzle-kit").Config } */
 export default {
   schema: "./utils/schema.js",
-  dialect: 'postgresql',
+  dialect: "postgresql",
   dbCredentials: {
-    url: "postgresql://neondb_owner:npg_mncN7Cu4ZYFR@ep-wispy-dream-a8vgu4s0-pooler.eastus2.azure.neon.tech/ai-interviewer-mocker?sslmode=require",
-    
+    connectionString: process.env.DATABASE_URL, // ✅ Use from .env.local
   },
-  
 };
+
